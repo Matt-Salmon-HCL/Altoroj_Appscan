@@ -25,10 +25,14 @@ function loadPage() {
 				document.location.href = "index.jsp?content="+jobs[sp[1]][sp[0]];
 			} else {
 				/* tell the user the job isn't open anymore */
-				document.write("<h2 style='color:#ff0000'>We're sorry, but it appears the position for " + sp[0] + " in group " + sp[1] + " is not open anymore</h2>");
+				document.write("<h2 style='color:#ff0000'>We're sorry, but it appears the position for " + escapeHtml(sp[0]) + " in group " + escapeHtml(sp[1]) + " is not open anymore</h2>");
 			}
 		}
 	}
+}
+
+function escapeHtml(value) {
+	return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 function getParameter(name) {
