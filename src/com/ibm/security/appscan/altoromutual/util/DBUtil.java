@@ -20,6 +20,7 @@ package com.ibm.security.appscan.altoromutual.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -214,9 +215,11 @@ public class DBUtil {
 			return false; 
 		
 		Connection connection = getConnection();
-		Statement statement = connection.createStatement();
+		PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) FROM PEOPLE WHERE USER_ID = ? AND PASSWORD = ?");
+		statement.setString(1, user);
+		statement.setString(2, password);
 		
-		ResultSet resultSet =statement.executeQuery("SELECT COUNT(*)FROM PEOPLE WHERE USER_ID = '"+ user +"' AND PASSWORD='" + password + "'"); /* BAD - user input should always be sanitized */
+		ResultSet resultSet = statement.executeQuery();
 		
 		if (resultSet.next()){
 			
