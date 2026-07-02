@@ -1,0 +1,28 @@
+name: "HCL AppScan DAST - scan template"
+on:
+  workflow_dispatch
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run ASoC DAST Scan
+        uses: HCL-TECH-SOFTWARE/appscan-dast-action@v1.0.7
+        with:
+          baseurl:  https://cloud.appscan.com
+          asoc_key: ${{secrets.ASOC_KEY}}
+          asoc_secret: ${{secrets.ASOC_SECRET}}
+          application_id: 3cdcba2d-0ce5-43bb-a196-70c0c07d3f29
+          dynamic_scan_type: upload
+          scan_or_scant_file: 'altoro.scant'
+          network: private
+          presence_id: a9d2bb67-4e76-f111-b337-000d3a0dff2c
+          fail_for_noncompliance: false
+          wait_for_analysis: true
+      - uses: actions/upload-artifact@v4
+        name: Upload HCL AppScan HTML Report to Github Artifacts
+        with:
+          name: AppScan Security Scan HTML Report 
+          path: '**/AppScan*.html'
+        if: success() || failure()
