@@ -68,3 +68,12 @@ Typical trigger phrases:
 - Keep skill workflows deterministic and evidence-driven.
 - Prefer compact outputs that still include traceable provenance.
 - Update each skill's `SKILL.md` if process requirements change.
+
+Skills MD was scanned for security concerns with Backslash Security Scanner and found to have no security threats:
+https://www.backslash.security/
+
+<img width="1042" height="916" alt="image" src="https://github.com/user-attachments/assets/33865bf0-9a22-4554-9ae2-d79d0a549edc" />
+
+<img width="1062" height="907" alt="image" src="https://github.com/user-attachments/assets/08b1ff46-b3de-4721-833e-fdc4ef8aa323" />
+
+
