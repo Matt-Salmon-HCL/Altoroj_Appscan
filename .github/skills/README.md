@@ -9,9 +9,9 @@ Skills are intended to make repeated tasks consistent, faster, and easier to ver
 
 ## Available skills
 
-### 1) AltoroJ-boot
+### 1) altoroj-boot
 
-Location: `AltoroJ-boot/SKILL.md`
+Location: `altoroj-boot/SKILL.md`
 
 Intended use:
 - Build and boot AltoroJ locally in a repeatable way.
@@ -33,9 +33,9 @@ Typical trigger phrases:
 - "Compile and run AltoroJ"
 - "Verify AltoroJ is running on localhost"
 
-### 2) Appscan-fix
+### 2) appscan-fix
 
-Location: `Appscan-fix/SKILL.md`
+Location: `appscan-fix/SKILL.md`
 
 Intended use:
 - Triage and remediate AppScan findings.
@@ -59,9 +59,9 @@ Typical trigger phrases:
 
 ## How to choose the right skill
 
-- Use AltoroJ-boot when your main goal is local build/startup/reachability.
-- Use Appscan-fix when your main goal is security issue triage, remediation, and verification.
-- Appscan-fix may invoke AltoroJ-boot as a verification gate after a code patch.
+- Use altoroj-boot when your main goal is local build/startup/reachability.
+- Use appscan-fix when your main goal is security issue triage, remediation, and verification.
+- appscan-fix may invoke altoroj-boot as a verification gate after a code patch.
 
 ## Notes
 

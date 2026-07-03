@@ -1,5 +1,5 @@
 ---
-name: AltoroJ-boot
+name: altoroj-boot
 description: "Use when building and booting AltoroJ locally with environment-first tool resolution, .tools fallback, compatibility checks, conditional tool downloads, compile verification, runtime port checks, and no cleanup. Keywords: AltoroJ boot, local Gradle, local JDK, Jetty runner, compile verify, localhost check."
 ---
 
